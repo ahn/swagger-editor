@@ -1,6 +1,6 @@
 'use strict';
 
-SwaggerEditor.service('Backend', function Backend($http, $q, defaults,
+SwaggerEditor.service('Backend', function Backend($http, $q, $location, defaults,
   $rootScope, Builder, ExternalHooks, YAML) {
 
   var changeListeners =  {};
@@ -12,7 +12,17 @@ SwaggerEditor.service('Backend', function Backend($http, $q, defaults,
     trailing: true
   });
 
-  var backendEndpoint = defaults.backendEndpoint;
+  var backend = $location.search().backend;
+  console.log("BA0", backend);
+  var backendEndpoint;
+  if (backend) {
+    backendEndpoint = backend;
+  }
+  else {
+    backendEndpoint = defaults.backendEndpoint;
+  }
+  console.log("BAA", backendEndpoint);
+  console.log("keke", $location.search());
 
   // if backendEndpoint is not absolute append it to location.pathname
   if (!absoluteRegex.test(backendEndpoint)) {
@@ -24,6 +34,8 @@ SwaggerEditor.service('Backend', function Backend($http, $q, defaults,
     // backendEndpoint
     backendEndpoint = backendEndpoint.replace('//', '/');
   }
+
+  console
 
   /*
    *

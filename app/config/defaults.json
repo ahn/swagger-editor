@@ -10,7 +10,7 @@
       "id": "UA-51231036-1"
     }
   },
-  "disableCodeGen": false,
+  "disableCodeGen": true,
   "examplesFolder": "spec-files/",
   "editorOptions": {
     "theme": "ace/theme/atom_dark"
@@ -28,12 +28,12 @@
     "twitter.yaml"
   ],
   "autocompleteExtension": {},
-  "useBackendForStorage": false,
+  "useBackendForStorage": true,
   "backendThrottle": 200,
   "keyPressDebounceTime": 200,
-  "backendEndpoint": "/editor/spec",
+  "backendEndpoint": "/editor/foo",
   "useYamlBackend": false,
-  "disableFileMenu": false,
+  "disableFileMenu": true,
   "headerBranding": false,
   "disableNewUserIntro": false,
   "enableTryIt": true,
