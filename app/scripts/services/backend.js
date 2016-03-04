@@ -12,8 +12,9 @@ SwaggerEditor.service('Backend', function Backend($http, $q, $location, defaults
     trailing: true
   });
 
+  // Using the 'backend' query parameter as the backend URL, if given
+
   var backend = $location.search().backend;
-  console.log("BA0", backend);
   var backendEndpoint;
   if (backend) {
     backendEndpoint = backend;
@@ -21,8 +22,6 @@ SwaggerEditor.service('Backend', function Backend($http, $q, $location, defaults
   else {
     backendEndpoint = defaults.backendEndpoint;
   }
-  console.log("BAA", backendEndpoint);
-  console.log("keke", $location.search());
 
   // if backendEndpoint is not absolute append it to location.pathname
   if (!absoluteRegex.test(backendEndpoint)) {
