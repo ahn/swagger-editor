@@ -31,12 +31,12 @@
   "useBackendForStorage": true,
   "backendThrottle": 200,
   "keyPressDebounceTime": 200,
-  "backendEndpoint": "/editor/foo",
+  "backendEndpoint": "/",
   "useYamlBackend": false,
   "disableFileMenu": true,
   "headerBranding": false,
-  "disableNewUserIntro": false,
-  "enableTryIt": true,
+  "disableNewUserIntro": true,
+  "enableTryIt": false,
   "brandingCssClass": "",
   "importProxyUrl": "https://cors-it.herokuapp.com/?url="
 }

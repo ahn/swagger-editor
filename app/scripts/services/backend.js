@@ -35,8 +35,6 @@ SwaggerEditor.service('Backend', function Backend($http, $q, $location, defaults
     backendEndpoint = backendEndpoint.replace('//', '/');
   }
 
-  console
-
   /*
    *
   */
@@ -117,6 +115,12 @@ SwaggerEditor.service('Backend', function Backend($http, $q, $location, defaults
           return buffer.yaml;
         }
         return res.data;
+      }).then(function(data) {
+        return new Promise(function (resolve, reject) {
+          YAML.dump(data, function(err, yaml) {
+            resolve(yaml);
+          });
+        });
       });
   }
 
